@@ -65,12 +65,15 @@ public class Main {
 
 				Point p = new Point(x, y);
 				points.add(p);
+
+				System.out.println(p.x);
 			}
 
 			double minimumDistance = Double.MAX_VALUE;
 
-			// Compare the current point (p1) to all the points to the right of
-			// it on the x-axis.
+			// Compare the distance from the current point (p1) to all the other
+			// points. Repeat this process by then choosing another point,
+			// leaving out the points we've already calculated the distance from
 			for (int i = 0; i < numberOfPoints; i++) {
 				Point p1 = points.get(i);
 
@@ -82,8 +85,8 @@ public class Main {
 					// distance?
 					if (square < minimumDistance) {
 						// Compare the distance for p1 and p2 (both x and y) and
-						// save it to minimumDistance
-						// if it's smaller than the current minimumDistance
+						// save it to minimumDistance if it's smaller than the
+						// current minimumDistance
 						double distance = Point.distance(p1, p2);
 						minimumDistance = Math.min(distance, minimumDistance);
 					}
