@@ -37,20 +37,20 @@ public class Main {
 
 		int numberOfPersonsInGroup = 0;
 
-		// Figure our the largest group
+		// Calculate the number of friends in p's friend group.
 		while (!persons.isEmpty()) {
-			Person friendOf = persons.poll();
+			Person friendOfP = persons.poll();
 
-			// If our current friend of p (pFriend) isn't in a group, add
-			// him/her to p's friend group
-			if (!friendOf.isInGroup()) {
+			// If our current friend of p (friendOfP) isn't in a group, add
+			// him/her to p's friend group. This includes p itself.
+			if (!friendOfP.isInGroup()) {
 				numberOfPersonsInGroup++;
-				// pFriend is now in a friend group
-				friendOf.setInGroup(true);
+				// friendOfP is now in a friend group
+				friendOfP.setInGroup(true);
 
-				// If pFriend is now in p's friend group, it means that all
-				// of pFriend's friend is also in this group
-				for (Person newFriend : friendOf.getFriends()) {
+				// If friendOfP is now in p's friend group, it means that all
+				// of friendOfP's friends is also in this group
+				for (Person newFriend : friendOfP.getFriends()) {
 					persons.add(newFriend);
 				}
 			}
