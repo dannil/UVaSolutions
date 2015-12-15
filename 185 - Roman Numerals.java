@@ -14,12 +14,8 @@ public class Main {
 	private boolean[] head;
 	private ArrayList<Character> all;
 
-	public Main() {
-		// TODO Auto-generated constructor stub
-	}
-
 	// Simple method for returning the roman equivalent of a letter
-	public int romanLetterToArabicNumber(char letter) {
+	private int romanLetterToArabicNumber(char letter) {
 		switch (letter) {
 			case 'M':
 				return 1000;
@@ -41,7 +37,7 @@ public class Main {
 	}
 
 	// Convert the input roman sum to an arabic sum
-	public int romanSumToArabicSum(String romanSum) {
+	private int romanSumToArabicSum(String romanSum) {
 		int sum = 0;
 
 		// Normalize string
@@ -65,7 +61,7 @@ public class Main {
 		return sum;
 	}
 
-	public void run() throws IOException {
+	private void run() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		String line = reader.readLine();
@@ -136,7 +132,7 @@ public class Main {
 
 	// Find the correct solution (0 for impossible, 1 for valid; every other
 	// result is equal to an ambiguous solution
-	public void findSolution(int now, int[] value, boolean[] used) {
+	private void findSolution(int now, int[] value, boolean[] used) {
 		// We got an ambiguous solution
 		if (this.solution > 1) {
 			return;

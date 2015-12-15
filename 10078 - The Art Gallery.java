@@ -16,11 +16,24 @@ public class Main {
 
 	}
 
-	public Main() {
-		// TODO Auto-generated constructor stub
+	private int turn(Corner c1, Corner c2, Corner c3) {
+		// Calculates the turn depending on the x and y
+		int leftOrRight = (c1.y - c2.y) * (c3.x - c2.x) - (c1.x - c2.x) * (c3.y - c2.y);
+
+		if (leftOrRight < 0) {
+			// Right turn
+			return -1;
+		}
+		if (leftOrRight > 0) {
+			// Left turn
+			return 1;
+		}
+
+		// No turn
+		return 0;
 	}
 
-	public void run() throws NumberFormatException, IOException {
+	private void run() throws NumberFormatException, IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		int numberOfCorners = Integer.parseInt(reader.readLine());
@@ -74,23 +87,6 @@ public class Main {
 
 			numberOfCorners = Integer.parseInt(reader.readLine());
 		}
-	}
-
-	private int turn(Corner c1, Corner c2, Corner c3) {
-		// Calculates the turn depending on the x and y
-		int leftOrRight = (c1.y - c2.y) * (c3.x - c2.x) - (c1.x - c2.x) * (c3.y - c2.y);
-
-		if (leftOrRight < 0) {
-			// Right turn
-			return -1;
-		}
-		if (leftOrRight > 0) {
-			// Left turn
-			return 1;
-		}
-
-		// No turn
-		return 0;
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {

@@ -12,12 +12,7 @@ public class Main {
 		public double x;
 		public double y;
 
-		public Coordinate() {
-			// TODO Auto-generated constructor stub
-		}
-
 		public Coordinate(int x, int y) {
-			this();
 			this.x = x;
 			this.y = y;
 		}
@@ -42,7 +37,7 @@ public class Main {
 		}
 	}
 
-	public void run() throws NumberFormatException, IOException {
+	private void run() throws NumberFormatException, IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		int testCases = Integer.parseInt(reader.readLine());
@@ -98,10 +93,6 @@ public class Main {
 			System.out.println(answer.replace(',', '.'));
 		}
 
-	}
-
-	public Main() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {

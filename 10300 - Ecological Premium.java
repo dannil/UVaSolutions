@@ -4,17 +4,15 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	private void run() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int testCases = Integer.parseInt(br.readLine());
 		for (int i = 0; i < testCases; i++) {
 			int numberOfFarmers = Integer.parseInt(br.readLine());
-
 			int sum = 0;
 
 			for (int j = 0; j < numberOfFarmers; j++) {
-
 				String[] values = br.readLine().split(" ");
 
 				// Calculating the animals per square meter and multiplying with
@@ -32,6 +30,10 @@ public class Main {
 
 			System.out.println(sum);
 		}
+	}
 
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		Main m = new Main();
+		m.run();
 	}
 }

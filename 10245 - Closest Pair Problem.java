@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
 
-	private static class Point implements Comparable<Point> {
+	private class Point implements Comparable<Point> {
 
 		public double x;
 		public double y;
@@ -22,7 +22,7 @@ public class Main {
 			return (int) ((int) point.x - this.x);
 		}
 
-		public static double distance(Point a, Point b) {
+		public double distanceTo(Point p) {
 			// Returns the distance between two points by calculating the
 			// resulting right triangle between the points.
 
@@ -30,7 +30,7 @@ public class Main {
 			// after the loop in run() to save computation time
 
 			// Source: http://www.purplemath.com/modules/distform.htm
-			return Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2);
+			return Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2);
 		}
 
 		@Override
@@ -46,7 +46,7 @@ public class Main {
 
 	}
 
-	public void run() throws NumberFormatException, IOException {
+	private void run() throws NumberFormatException, IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		int numberOfPoints = Integer.parseInt(reader.readLine());
@@ -66,7 +66,7 @@ public class Main {
 				Point p = new Point(x, y);
 				points.add(p);
 
-				System.out.println(p.x);
+				// System.out.println(p.x);
 			}
 
 			double minimumDistance = Double.MAX_VALUE;
@@ -87,7 +87,7 @@ public class Main {
 						// Compare the distance for p1 and p2 (both x and y) and
 						// save it to minimumDistance if it's smaller than the
 						// current minimumDistance
-						double distance = Point.distance(p1, p2);
+						double distance = p1.distanceTo(p2);
 						minimumDistance = Math.min(distance, minimumDistance);
 					}
 				}

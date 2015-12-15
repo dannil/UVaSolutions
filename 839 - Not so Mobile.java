@@ -6,32 +6,6 @@ public class Main {
 
 	private BufferedReader reader;
 
-	public static void main(String args[]) throws Exception {
-		Main m = new Main();
-		m.run();
-	}
-
-	public void run() throws NumberFormatException, IOException {
-		this.reader = new BufferedReader(new InputStreamReader(System.in));
-
-		int testCases = Integer.parseInt(this.reader.readLine());
-
-		this.reader.readLine();
-
-		for (int i = 0; i < testCases; i++) {
-			if (weight(this.reader.readLine()) != -1) {
-				System.out.println("YES");
-			} else {
-				System.out.println("NO");
-			}
-
-			if (i != testCases - 1) {
-				System.out.println();
-				this.reader.readLine();
-			}
-		}
-	}
-
 	private int weight(String line) throws IOException {
 		int left = 0;
 		int right = 0;
@@ -72,5 +46,31 @@ public class Main {
 
 		// No equilibrium
 		return -1;
+	}
+
+	private void run() throws NumberFormatException, IOException {
+		this.reader = new BufferedReader(new InputStreamReader(System.in));
+
+		int testCases = Integer.parseInt(this.reader.readLine());
+
+		this.reader.readLine();
+
+		for (int i = 0; i < testCases; i++) {
+			if (weight(this.reader.readLine()) != -1) {
+				System.out.println("YES");
+			} else {
+				System.out.println("NO");
+			}
+
+			if (i != testCases - 1) {
+				System.out.println();
+				this.reader.readLine();
+			}
+		}
+	}
+
+	public static void main(String args[]) throws Exception {
+		Main m = new Main();
+		m.run();
 	}
 }

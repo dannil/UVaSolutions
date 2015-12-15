@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
+	private void run() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		String line = null;
@@ -46,5 +46,10 @@ public class Main {
 				System.out.printf("%s\n", "No");
 			}
 		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		Main m = new Main();
+		m.run();
 	}
 }

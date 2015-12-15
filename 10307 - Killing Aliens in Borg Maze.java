@@ -137,7 +137,7 @@ public class Main {
 
 	}
 
-	public void BFS(Node source, List<Edge> edges) {
+	private void BFS(Node source, List<Edge> edges) {
 		final int[] dx = { -1, 0, 1, 0 };
 		final int[] dy = { 0, -1, 0, 1 };
 
@@ -194,7 +194,7 @@ public class Main {
 		}
 	}
 
-	public void run() throws IOException {
+	private void run() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int testCases = Integer.parseInt(reader.readLine());
 

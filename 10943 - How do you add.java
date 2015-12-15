@@ -4,14 +4,9 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-	int[][] numbers;
+	private int[][] numbers;
 
-	public static void main(String[] args) throws IOException {
-		Main m = new Main();
-		m.run();
-	}
-
-	public Main() {
+	private Main() {
 		this.numbers = new int[101][101];
 
 		// Fill the numbers array with -1 (placeholder) to see if we haven't
@@ -23,7 +18,7 @@ public class Main {
 		}
 	}
 
-	public int divideIntoParts(int n, int k) {
+	private int divideIntoParts(int n, int k) {
 		if (k <= 1) {
 			// If k is smaller or equal to 1, return 1 (we reached the end)
 			return 1;
@@ -46,7 +41,7 @@ public class Main {
 		return this.numbers[n][k];
 	}
 
-	public void run() throws IOException {
+	private void run() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		while (true) {
@@ -63,6 +58,11 @@ public class Main {
 			// Print the result
 			System.out.println(divideIntoParts(N, K));
 		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		Main m = new Main();
+		m.run();
 	}
 
 }

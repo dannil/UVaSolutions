@@ -19,7 +19,7 @@ public class Main {
 	// return (bigMod(b, p - 1, m) * (b % m)) % m;
 	// }
 
-	public void run() throws IOException {
+	private void run() throws IOException {
 		// long res = bigMod(875898931, 93086444, 10494);
 		// System.out.println("RES: " + res);
 

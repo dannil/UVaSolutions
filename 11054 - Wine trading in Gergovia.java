@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	private void run() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		long[] bottles;
@@ -41,5 +41,10 @@ public class Main {
 			// Print result
 			System.out.println(result);
 		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		Main m = new Main();
+		m.run();
 	}
 }

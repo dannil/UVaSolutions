@@ -8,7 +8,7 @@ import java.util.Queue;
 
 public class Main {
 
-	public class Person {
+	private class Person {
 
 		private boolean isInGroup;
 		private List<Person> friends;
@@ -31,7 +31,7 @@ public class Main {
 
 	}
 
-	public int groupOfFriends(Person p) {
+	private int groupOfFriends(Person p) {
 		Queue<Person> persons = new LinkedList<Person>();
 		persons.add(p);
 
@@ -60,7 +60,7 @@ public class Main {
 		return numberOfPersonsInGroup;
 	}
 
-	public void run() throws NumberFormatException, IOException {
+	private void run() throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int testCases = Integer.parseInt(br.readLine());
 
